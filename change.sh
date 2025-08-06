@@ -16,9 +16,7 @@ function log() {
 }
 
 log "Getting IPv$ip_type address..."
-set -x
 ip=$(curl -s -$ip_type --interface $interface_name http://$ip_type.ip.moeeye.cn/?my)
-set +x
 if [[ -z "$ip" ]]; then
 	log "cannot get ip !" >&2
 	exit 1
